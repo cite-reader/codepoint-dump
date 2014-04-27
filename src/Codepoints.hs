@@ -17,7 +17,7 @@ separatedCodepoints :: String -> [ShowS]
 separatedCodepoints = addSpaces . strToCodepoints
 
 render :: [ShowS] -> String
-render x = foldr (.) (\_ -> "") x ()
+render x = foldr (.) (const "") x ()
 
 codepoints :: String -> String
 codepoints = render . separatedCodepoints
