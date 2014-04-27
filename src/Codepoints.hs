@@ -11,7 +11,7 @@ strToCodepoints :: String -> [ShowS]
 strToCodepoints = map showCodepoint
 
 addSpaces :: [ShowS] -> [ShowS]
-addSpaces = intersperse (\s -> " " ++ s)
+addSpaces = intersperse (\s -> ' ' : s)
 
 separatedCodepoints :: String -> [ShowS]
 separatedCodepoints = addSpaces . strToCodepoints
